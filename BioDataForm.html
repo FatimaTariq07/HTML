@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleIntro</title>
+</head>
+<body>
+    <form>
+        <h2 style="background-color: blueviolet;width: 350px;height:50px;color:beige">Bio Data Form</h2>
+        <table style="margin: 0;text-align:center;border:2px dotted black">
+         <h3>Personal Information</h3>
+            <tr>
+                <td style="font-size: medium;"><label> Enter Name : </label></td>
+            <td><input type="text" name="Name"></td>
+            </tr>
+            <tr>
+                <td style="font-size: medium;"><label>Enter age : </label></td>
+                <td><input type="number" name="age" required min="18" max="70"></td>
+            </tr>
+            <tr>
+                <td style="font-size: medium;"> <label>Enter Gender : </label></td>
+                <td><input type="radio" name="gender">Male</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="radio" name="gender">Female</td>
+            </tr>
+            <tr>
+                <td style="font-size: medium;">Country</td>
+                <td>
+                    <select>
+                        <option value="Pakistan" >Pakistan
+                        <option value="Australia" >Australia
+                        <option value="Saudi Arabia" >Saudi Arabia
+                        <option value="America" >America
+                        <option value="Turkey" >Turkey
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size: medium;">Are you interested in : </td>
+                <td><input type="checkbox" name="interest">Cooking</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="checkbox" name="interest">Eating</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="checkbox" name="interest">Baking</td>
+            </tr>
+            <tr>
+                <td style="font-size: medium;">Please enter a password : </td>
+                <td><input type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$" title="Password must contain at least 8 characters, including uppercase, lowercase, and a number" required></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Submit Form"></td>
+            </tr>
+        </table>
+    </form>
+   
+</body>
+</html>
