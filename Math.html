@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <div class="max-w-[520px] mx-auto bg-blue-400 p-5 mt-4">
+        <div class="rounded-md p-5 bg-gray-100">
+            <form action="" name="form" id="form" enctype="multipart/form-data" method="post"
+                onsubmit="event.preventDefault()">
+                <h1 class="text-2xl font-bold">Maths Game</h1>
+                <div class="flex justify-between my-2">
+                    <div id="qno" class="text-gray-500">Question 1/10</div>
+                    <div id="score" class="text-gray-500">Score 0</div>
+                </div>
+                <div class="bg-white">
+                    <!-- Styled HR with CSS -->
+                    <hr class="bg-red-500 h-1 w-56" /> <!-- Use border-0 to remove default styling -->
+                </div>
+                <div class="mx-auto bg-green-300 rounded-md mt-5">
+                    <div name="actualQues" id="actualQues" class="text-center text-xl font-bold w-full p-3">76/4 = ?
+                    </div>
+                </div>
+                <h1 class="font-bold my-5">Choose correct one:</h1>
+                <input type="submit" onclick="Cal1(this.form)" name="btn1" id="btn1"
+                    class="w-full bg-gray-300 text-center rounded-md my-2 p-2 cursor-pointer" value="">
+                <input type="submit" onclick="Cal2(this.form)" name="btn2" id="btn2"
+                    class="w-full bg-gray-300 text-center rounded-md my-2 p-2 cursor-pointer" value="">
+                <input type="submit" onclick="Cal3(this.form)" name="btn3" id="btn3"
+                    class="w-full bg-gray-300 text-center rounded-md my-2 p-2 cursor-pointer" value="">
+                <input type="submit" onclick="Cal4(this.form)" name="btn4" id="btn4"
+                    class="w-full bg-gray-300 text-center rounded-md my-2 p-2 cursor-pointer" value="">
+            </form>
+        </div>
+    </div>
+
+    <script>
+
+        document.addEventListener("DOMContentLoad", Callme());
+
+        var score = 0;
+        var resultQno = 0;
+        var increment = 0;
+
+        function Callme() {
+            val1Qno = parseInt((Math.random() * (100 - 1 + 1)) + 1);
+            val2Qno = parseInt((Math.random() * (100 - 1 + 1)) + 1);
+            parseInt(increment++);
+
+            if (increment > 10) {
+                alert("Quiz Complete");
+                return;
+            }
+
+            choice1 = parseInt((Math.random() * (10 - 1 + 1)) + 1);
+            choice2 = parseInt((Math.random() * (10 - 1 + 1)) + 1);
+            choice3 = parseInt((Math.random() * (10 - 1 + 1)) + 1);
+            choice4 = parseInt((Math.random() * (10 - 1 + 1)) + 1);
+
+            operator = parseInt((Math.random() * (4 - 1 + 1)) + 1);
+
+            if (operator == 1) {
+                resultQno = parseInt(val1Qno / val2Qno);
+                document.getElementById("actualQues").innerHTML = val1Qno + " / " + val2Qno + " = ?";
+            } else if (operator == 2) {
+                resultQno = parseInt(val1Qno * val2Qno);
+                document.getElementById("actualQues").innerHTML = val1Qno + " * " + val2Qno + " = ?";
+            } else if (operator == 3) {
+                resultQno = parseInt(val1Qno + val2Qno);
+                document.getElementById("actualQues").innerHTML = val1Qno + " + " + val2Qno + " = ?";
+            } else if (operator == 4) {
+                resultQno = parseInt(val1Qno - val2Qno);
+                document.getElementById("actualQues").innerHTML = val1Qno + " - " + val2Qno + " = ?";
+            }
+
+            document.getElementById("qno").innerHTML = "Question: " + increment + "/" + 10;
+            document.getElementById("score").innerHTML = "Score " + score;
+
+            document.getElementById("btn1").value = choice1;
+            document.getElementById("btn2").value = choice2;
+            document.getElementById("btn3").value = choice3;
+            document.getElementById("btn4").value = choice4;
+        }
+
+        function Cal1(form) {
+            btn1 = form.btn1.value;
+
+            console.log("Result: ", resultQno);
+            console.log("btn1: ", btn1);
+
+            if (btn1 == resultQno) {
+                score = score + 10;
+                Callme();
+            } else {
+                Callme()
+            }
+        }
+
+        function Cal2(form) {
+            btn2 = form.btn2.value;
+
+            console.log("Result: ", resultQno);
+            console.log("btn2: ", btn2);
+
+            if (btn2 == resultQno) {
+                score = score + 10;
+                Callme();
+            } else {
+                Callme()
+            }
+        }
+
+        function Cal3(form) {
+            btn3 = form.btn3.value;
+
+            console.log("Result: ", resultQno);
+            console.log("btn3: ", btn3);
+
+            if (btn3 == resultQno) {
+                score = score + 10;
+                Callme();
+            } else {
+                Callme()
+            }
+        }
+
+        function Cal4(form) {
+            btn4 = form.btn4.value;
+
+            console.log("Result: ", resultQno);
+            console.log("btn4: ", btn4);
+
+            if (btn4 == resultQno) {
+                score = score + 10;
+                Callme();
+            } else {
+                Callme()
+            }
+        }
+    </script>
+
+</body>
+
+</html>
